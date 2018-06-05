@@ -45,6 +45,10 @@ const parseMLHSite = rawHtml => {
       if (checkAttribute(element, 'itemprop', 'endDate')) {
         thisHackathon.end = element.attribs.content;
       }
+<<<<<<< c1725e9b0459023dcf87e4f65e328756eade8cf3
+=======
+      if (filterEvent(thisHackathon)) rtn.push(thisHackathon);
+>>>>>>> Basic faulty filtering
     });
     rtn.push(thisHackathon);
   });
@@ -70,4 +74,21 @@ const checkAttribute = (element, attribute, shouldBe) => {
   }
 };
 
+/**
+ *
+ * @param Object[] events
+ * @return A list of events with all filters removed
+ */
+const filterEvent = event => {
+  //note that if allow is true, it is exclusively true. i.e. it's the *only* thing allowed.
+  const filters = [{ key: 'name', value: 'Local Hack Day'}];
+  for(let i=0; i<filters.length; i++){
+    console.log(event[filters[i].key])
+    console.log(event[filters[i].key] === filters[i].value);
+    if(event[filters[i].key] === filters[i].value) return false;
+   
+   
+  }
+  return true;
+};
 module.exports = { getMLHSite, parseMLHSite };
