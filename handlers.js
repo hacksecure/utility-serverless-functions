@@ -6,7 +6,7 @@ const { getMLHSite, parseMLHSite } = require('./listMLH.js');
  */
 
 exports.listMLH = async event => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     getMLHSite(
       event.queryStringParameters.region,
       event.queryStringParameters.year
