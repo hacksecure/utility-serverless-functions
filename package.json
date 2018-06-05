@@ -1,0 +1,30 @@
+{
+  "name": "utility-serverless-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy",
+    "lint": "eslint *.js --fix",
+    "lint:nofix": "eslint *.js",
+    "dev": "serverless offline start"
+  },
+  "author": "Benjamin Cooper & Matt Leon",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.13.4",
+    "serverless": "^1.27.3",
+    "serverless-offline": "^3.25.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
