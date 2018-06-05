@@ -9,9 +9,16 @@ provider:
   region: us-east-2
 functions:
   listMLH:
-    handler: listMLH.handler
+    handler: handlers.listMLH
     events:
-      - http: GET /listMLH
+      - http:
+          path: /listMLH
+          method: get
+          request:
+            parameters:
+              querystrings:
+                url: true
+
 plugins:
   - serverless-offline
 
