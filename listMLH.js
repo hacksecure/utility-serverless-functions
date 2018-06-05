@@ -10,7 +10,7 @@ const sha1 = require('sha1');
 const getMLHSite = (region, year) => {
   return rp(
     `https://mlh.io/seasons/${region}-${
-      year > 2000 ? year : year + 2000
+      year > 2000 ? year : Number(year) + 2000
     }/events`
   );
 };
