@@ -20,7 +20,7 @@ exports.listMLH = async event => {
         }
         });
       })
-      .catch(err => {
+      .catch(err => { 
         reject({
           body: err,
           statusCode: 500,
