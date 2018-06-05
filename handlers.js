@@ -6,27 +6,27 @@ const { getMLHSite, parseMLHSite } = require('./listMLH.js');
  */
 
 exports.listMLH = async event => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     getMLHSite(
       event.queryStringParameters.region,
       event.queryStringParameters.year
     )
       .then(data => {
         resolve({
-          body: parseMLHSite(data),
+          body: JSON.stringify(parseMLHSite(data)),
           statusCode: 200,
           headers: {
-            "Content-Type": "application/json"
-        }
+            'Content-Type': 'application/json'
+          }
         });
       })
-      .catch(err => { 
-        reject({
+      .catch(err => {
+        resolve({
           body: err,
           statusCode: 500,
           headers: {
-            "Content-Type": "application/json"
-        }
+            'Content-Type': 'application/json'
+          }
         });
       });
   });

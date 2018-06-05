@@ -45,10 +45,10 @@ const parseMLHSite = rawHtml => {
       if (checkAttribute(element, 'itemprop', 'endDate')) {
         thisHackathon.end = element.attribs.content;
       }
-
-      rtn.push(thisHackathon);
     });
+    rtn.push(thisHackathon);
   });
+
   return {
     hash: `sha1-${sha1(rtn)}`,
     data: rtn
