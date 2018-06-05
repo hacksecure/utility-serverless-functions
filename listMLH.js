@@ -1,15 +1,24 @@
 const rp = require('request-promise');
 const cheerio = require('cheerio');
+const sha1 = require('sha1');
+
+/**
+ * @param event The AWS Lambda event passed in. Relevant queryParams are region and year
+ * @return List of MLH events and a self-identifying hash of their string.
+ */
 
 exports.handler = async event =>
   getMlhSite(
     event.queryStringParameters.region,
     event.queryStringParameters.year
-  ).then(data => ({
-    body: JSON.stringify(parseMlhSite(data)),
-    statusCode: 200
-  }));
-/*
+  ).then(data => {
+    const rtn = parseMlhSite(data);
+    return {
+      body: { hash: `sha1-${sha1(rtn)}`, data: rtn },
+      statusCode: 200
+    };
+  });
+/**
     @param region Either NA or EU
     @param year The year that you wish to retrive the site for
     @return     A Promise containing the raw HTML contents of the site
@@ -21,7 +30,7 @@ const getMlhSite = (region, year) =>
     }/events`
   );
 
-/*
+/**
     @param rawHtml the HTML from the MLH events site to parse
     @return     A JSON with the event name, dates and URL
 */
@@ -59,7 +68,7 @@ const parseMlhSite = rawHtml => {
   return rtn;
 };
 
-/*
+/**
     @description A safe method of comparing an attribute of an element to a desired value
     @param  element  The HTML element to be evaluated
     @param  attribute   The attribute of the HTML element to compare
