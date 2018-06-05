@@ -8,7 +8,8 @@
     "deploy": "serverless deploy",
     "lint": "eslint *.js --fix",
     "lint:nofix": "eslint *.js",
-    "dev": "serverless offline start"
+    "dev": "serverless offline start",
+    "remove": "serverless remove"
   },
   "author": "Benjamin Cooper & Matt Leon",
   "license": "MIT",
@@ -18,8 +19,9 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
     "prettier": "^1.13.4",
-    "serverless": "^1.27.3",
-    "serverless-offline": "^3.25.1"
+    "serverless": "1.25.x",
+    "serverless-offline": "^3.25.1",
+    "serverless-webpack": "^5.1.5"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
@@ -29,5 +31,5 @@
   },
   "engines": {
     "node": "8.1.0"
-}
+  }
 }

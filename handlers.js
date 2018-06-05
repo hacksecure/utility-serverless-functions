@@ -14,13 +14,15 @@ exports.listMLH = event => {
       .then(data => {
         resolve({
           body: parseMLHSite(data),
-          statusCode: 200
+          statusCode: 200,
+          'content-type': 'application/json'
         });
       })
       .catch(err => {
         reject({
           body: err,
-          statusCode: 500
+          statusCode: 500,
+          'content-type': 'application/json'
         });
       });
   });

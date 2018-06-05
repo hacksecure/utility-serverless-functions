@@ -21,6 +21,11 @@ functions:
 
 plugins:
   - serverless-offline
+  - serverless-webpack
+
+custom:
+  babelPresets:
+    - latest
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
