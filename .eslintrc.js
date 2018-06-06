@@ -9,7 +9,5 @@ module.exports = {
       "prettier/prettier": "error",
       "linebreak-style":["error", "unix"],
       "no-use-before-define": 0
-
-
     }
   };
