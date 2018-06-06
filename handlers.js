@@ -22,7 +22,7 @@ exports.listMLH = async event => {
       })
       .catch(err => {
         resolve({
-          body: err,
+          body: JSON.stringify(err),
           statusCode: 500,
           headers: {
             'Content-Type': 'application/json'
