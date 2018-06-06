@@ -45,10 +45,7 @@ const parseMLHSite = rawHtml => {
       if (checkAttribute(element, 'itemprop', 'endDate')) {
         thisHackathon.end = element.attribs.content;
       }
-<<<<<<< c1725e9b0459023dcf87e4f65e328756eade8cf3
-=======
       if (filterEvent(thisHackathon)) rtn.push(thisHackathon);
->>>>>>> Basic faulty filtering
     });
     rtn.push(thisHackathon);
   });
