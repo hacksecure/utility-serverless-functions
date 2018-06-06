@@ -1,7 +1,7 @@
 {
   "name": "utility-serverless-functions",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of serverless endpoints to help make hacksecu.re work.",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
