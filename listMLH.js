@@ -45,9 +45,8 @@ const parseMLHSite = rawHtml => {
       if (checkAttribute(element, 'itemprop', 'endDate')) {
         thisHackathon.end = element.attribs.content;
       }
-      if (filterEvent(thisHackathon)) rtn.push(thisHackathon);
     });
-    rtn.push(thisHackathon);
+    if (filterEvent(thisHackathon)) rtn.push(thisHackathon);
   });
 
   return {
