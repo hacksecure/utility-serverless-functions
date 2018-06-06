@@ -81,13 +81,11 @@ const checkAttribute = (element, attribute, shouldBe) => {
  */
 const filterEvent = event => {
   //note that if allow is true, it is exclusively true. i.e. it's the *only* thing allowed.
-  const filters = [{ key: 'name', value: 'Local Hack Day'}];
-  for(let i=0; i<filters.length; i++){
-    console.log(event[filters[i].key])
+  const filters = [{ key: 'name', value: 'Local Hack Day' }];
+  for (let i = 0; i < filters.length; i++) {
+    console.log(event[filters[i].key]);
     console.log(event[filters[i].key] === filters[i].value);
-    if(event[filters[i].key] === filters[i].value) return false;
-   
-   
+    if (event[filters[i].key] === filters[i].value) return false;
   }
   return true;
 };
